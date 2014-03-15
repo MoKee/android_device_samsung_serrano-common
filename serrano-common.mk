@@ -145,7 +145,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.warmboot.capability=1 \
     ro.qualcomm.cabl=0 \
     ro.opengles.version=196608 \
-    af.resampler.quality=4 \
+    af.resampler.quality=255 \
     persist.audio.fluence.mode=endfire \
     persist.audio.vr.enable=false \
     persist.audio.handset.mic=digital \
@@ -172,10 +172,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.virtual=0 \
     mm.enable.smoothstreaming=true \
     persist.timed.enable=true
-
-# For userdebug builds
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.secure=0
 
 # call common msm8930
 $(call inherit-product, device/samsung/msm8930-common/msm8930.mk)
