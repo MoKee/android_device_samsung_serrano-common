@@ -97,3 +97,6 @@ PRODUCT_BOOT_JARS := $(subst $(space),:,$(PRODUCT_BOOT_JARS))
 
 # Build our own PowerHAL
 TARGET_POWERHAL_VARIANT :=
+
+# Custom RIL class
+BOARD_RIL_CLASS := ../../../device/samsung/serrano-common/ril/
