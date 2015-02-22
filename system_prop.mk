@@ -39,8 +39,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.vr.enable=false \
     persist.audio.handset.mic=digital \
     persist.audio.lowlatency.rec=false \
-    qcom.hw.aac.encoder=true \
-    media.aaccodectype=1
+    qcom.hw.aac.encoder=true
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -64,7 +63,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.max_starting_bg=8 \
     persist.timed.enable=true \
     wifi.interface=wlan0 \
-    ro.qualcomm.bt.hci_transport=smd
+    ro.qualcomm.bt.hci_transport=smd \
+    persist.sys.isUsbOtgEnabled=true
 
 # QC Perf
 PRODUCT_PROPERTY_OVERRIDES += \
