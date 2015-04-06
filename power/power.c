@@ -105,14 +105,14 @@ static int get_scaling_governor() {
     return 0;
 }
 
-static void cm_power_set_interactive(struct power_module *module, int on)
+static void cm_power_set_interactive(__attribute__((unused)) struct power_module *module, int on)
 {
-    sysfs_write(NOTIFY_ON_MIGRATE, on ? "1" : "0");
+    //sysfs_write(NOTIFY_ON_MIGRATE, on ? "1" : "0");
 }
 
 static void configure_governor()
 {
-    cm_power_set_interactive(NULL, 1);
+    //cm_power_set_interactive(NULL, 1);
 
     if (strncmp(governor, "ondemand", 8) == 0) {
         sysfs_write("/sys/devices/system/cpu/cpufreq/ondemand/up_threshold", "90");
@@ -207,7 +207,7 @@ static void cm_power_hint(struct power_module *module, power_hint_t hint,
     }
 }
 
-static void cm_power_init(struct power_module *module)
+static void cm_power_init(__attribute__((unused)) struct power_module *module)
 {
     get_scaling_governor();
     configure_governor();
@@ -218,22 +218,23 @@ static struct hw_module_methods_t power_module_methods = {
 };
 
 struct cm_power_module HAL_MODULE_INFO_SYM = {
-    base: {
-        common: {
-            tag: HARDWARE_MODULE_TAG,
-            module_api_version: POWER_MODULE_API_VERSION_0_2,
-            hal_api_version: HARDWARE_HAL_API_VERSION,
-            id: POWER_HARDWARE_MODULE_ID,
-            name: "CM Power HAL",
-            author: "The CyanogenMod Project",
-            methods: &power_module_methods,
+    .base = {
+        .common = {
+            .tag = HARDWARE_MODULE_TAG,
+            .module_api_version = POWER_MODULE_API_VERSION_0_2,
+            .hal_api_version = HARDWARE_HAL_API_VERSION,
+            .id = POWER_HARDWARE_MODULE_ID,
+            .name = "CM Power HAL",
+            .author = "The CyanogenMod Project",
+            .methods = &power_module_methods,
         },
-       init: cm_power_init,
-       setInteractive: cm_power_set_interactive,
-       powerHint: cm_power_hint,
+
+       .init = cm_power_init,
+       .setInteractive = cm_power_set_interactive,
+       .powerHint = cm_power_hint,
     },
 
-    lock: PTHREAD_MUTEX_INITIALIZER,
-    boostpulse_fd: -1,
-    boostpulse_warned: 0,
+    .lock = PTHREAD_MUTEX_INITIALIZER,
+    .boostpulse_fd = -1,
+    .boostpulse_warned = 0,
 };
