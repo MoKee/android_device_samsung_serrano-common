@@ -89,5 +89,5 @@ TARGET_POWERHAL_VARIANT :=
 # Custom RIL class
 BOARD_RIL_CLASS := ../../../device/samsung/serrano-common/ril/
 
-# CMHW
-BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw
+# MKHW
+BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/mkhw
