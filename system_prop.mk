@@ -33,13 +33,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     audio.gapless.playback.disable=true \
     audio.offload.disable=1 \
-    mm.enable.qcom_parser=3407871 \
+    mm.enable.qcom_parser=3310129 \
     mm.enable.smoothstreaming=true \
     persist.audio.fluence.mode=endfire \
     persist.audio.vr.enable=false \
     persist.audio.handset.mic=digital \
     persist.audio.lowlatency.rec=false \
-    qcom.hw.aac.encoder=true
+    qcom.hw.aac.encoder=true \
+    media.aac_51_output_enabled=true
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -48,7 +49,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.virtual=0 \
     ro.sf.lcd_density=240 \
     ro.opengles.version=196608 \
-    ro.qualcomm.cabl=0
+    ro.qualcomm.cabl=0 \
+    ro.hwui.text_large_cache_height=2048
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
