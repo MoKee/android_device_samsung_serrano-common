@@ -68,7 +68,6 @@ on early-boot
     setrlimit 8 67108864 67108864
 
 on boot
-    mount debugfs /sys/kernel/debug /sys/kernel/debug
     chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set
     chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
     chown bluetooth net_bt_stack /sys/devices/platform/msm_serial_hs.0/clock
@@ -169,6 +168,9 @@ on boot
 
     # Set SSR level
     setprop persist.sys.ssr.restart_level 3
+
+    # BFQ
+    write /sys/block/mmcblk0/queue/iosched/slice_idle 0
 
 # MSM specific files that need to be created on /data
 on post-fs-data
