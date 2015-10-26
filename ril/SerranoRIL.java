@@ -46,12 +46,12 @@ public class SerranoRIL extends RIL {
 
     public SerranoRIL(Context context, int preferredNetworkType,
             int cdmaSubscription, Integer instanceId) {
-        this(context, preferredNetworkType, cdmaSubscription);
+        super(context, preferredNetworkType, cdmaSubscription, instanceId);
+        mQANElements = 6;
     }
 
     public SerranoRIL(Context context, int networkMode, int cdmaSubscription) {
-        super(context, networkMode, cdmaSubscription);
-        mQANElements = 6;
+        super(context, networkMode, cdmaSubscription, null);
     }
 
     @Override
