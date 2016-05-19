@@ -80,5 +80,5 @@ TARGET_NEED_DISABLE_FACE_DETECTION_BOTH_CAMERAS := true
 COMMON_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 BOARD_RIL_CLASS := ../../../device/samsung/serrano-common/ril/
 
-# CMHW
-BOARD_HARDWARE_CLASS := device/samsung/serrano-common/cmhw
+# MKHW
+BOARD_HARDWARE_CLASS := device/samsung/serrano-common/mkhw
