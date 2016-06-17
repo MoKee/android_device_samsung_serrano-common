@@ -18,7 +18,7 @@
 package org.mokee.hardware;
 
 import android.os.SystemProperties;
-import org.mokee.hardware.util.FileUtils;
+import org.mokee.internal.util.FileUtils;
 
 /**
  * Support for displaying a different serial number in Settings -> About Phone
