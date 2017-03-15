@@ -1,4 +1,5 @@
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2013-2016, The CyanogenMod Project
+# Copyright (C) 2017, The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -34,7 +35,6 @@ BOARD_KERNEL_BASE := 0x80200000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8930-common
-TARGET_KERNEL_HAVE_EXFAT := true
 ifneq ($(filter serranoltespr serranolteusc,$(TARGET_DEVICE)),)
 TARGET_KERNEL_CONFIG := samsung_serrano_usa_defconfig
 else
